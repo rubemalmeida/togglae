@@ -2,7 +2,7 @@
     "name": "Togglae for Gather.Town",
     "short_name": "Togglae",
     "description": "Control your mic in Gather Town using Alt + Shift + Q or what you prefer.",
-    "version": "0.1",
+    "version": "0.2",
     "version_name": "girino",
     "manifest_version": 3,
     "permissions": [
