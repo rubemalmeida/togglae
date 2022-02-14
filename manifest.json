@@ -9,8 +9,7 @@
         "scripting"
     ],
     "host_permissions": [
-      "https://www.gather.town/",
-      "https://gather.town/"
+        "*://*.gather.town/"
     ],
     "icons": {
         "16": "/assets/icon-no-speak-16x.png",

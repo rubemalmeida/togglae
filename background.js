@@ -1,6 +1,6 @@
 chrome.commands.onCommand.addListener((command) => {
   if (command !== 'toggleGatherTownMic') return;
-  const query = { url: 'https://gather.town/*' };
+  const query = { url: '*://*.gather.town/*' };
   chrome.tabs.query(query, (tabs) => {
     chrome.scripting.executeScript({
       target: {tabId: tabs[0].id},
