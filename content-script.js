@@ -3,6 +3,7 @@
 		return document.querySelector('.GameVideo-self-video-container button')
 		|| document.querySelector('.GameVideosContainer-videobar-content button')
 		|| document.querySelector('.GameCanvasContainer-main button')
+		|| document.querySelector('button[aria-label="Microphone"]')
 	};
 	var audioBtn = getAudioButton();
 	audioBtn.click();
