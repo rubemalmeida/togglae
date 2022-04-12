@@ -1,9 +1,9 @@
 ;(() => {
 	var getAudioButton = () => {
-		return document.querySelector('.GameVideo-self-video-container button')
-		|| document.querySelector('.GameVideosContainer-videobar-content button')
+		return document.querySelector('div[data-tutorial-tooltip-id="game-self-video"] > * > button[aria-label="Microphone"]')
+		|| document.querySelector('.GameVideo-self-video-container button')
 		|| document.querySelector('.GameCanvasContainer-main button')
-		|| document.querySelector('button[aria-label="Microphone"]')
+		|| document.querySelector('.GameVideosContainer-videobar-content button')
 	};
 	var audioBtn = getAudioButton();
 	audioBtn.click();
