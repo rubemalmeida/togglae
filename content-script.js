@@ -1,6 +1,7 @@
 ;(() => {
 	var getAudioButton = () => {
-		return document.querySelector('div[data-tutorial-tooltip-id="game-self-video"] > * > button[aria-label="Microphone"]')
+		return document.querySelector('div[data-tutorial-tooltip-id="game-self-video"] > div[class="Layout"] > div[class="Tooltip"] > button')
+		|| document.querySelector('div[data-tutorial-tooltip-id="game-self-video"] > * > button[aria-label="Microphone"]')
 		|| document.querySelector('.GameVideo-self-video-container button')
 		|| document.querySelector('.GameCanvasContainer-main button')
 		|| document.querySelector('.GameVideosContainer-videobar-content button')
@@ -14,7 +15,7 @@
 	};
 
 	var isMute = getIsMute();
-	if(isMute) {
+	if(isMute === true) {
 		console.log('You are mutted');
 		return true;
 	} else {
