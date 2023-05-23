@@ -7,8 +7,7 @@
 	};
 
 	var getIsMute = () => {
-		const key = `${window.location.pathname.split('/').slice(2).join("\\")}/audioMuteClicked`
-		return localStorage.getItem(key) === 'true'
+		return localStorage.getItem('audioMuteClicked') === 'true'
 	};
 
 	var isMute = getIsMute();
