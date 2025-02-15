@@ -1,0 +1,30 @@
+name: Branch Naming Validation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches-ignore:
+      - main
+      - develop
+
+jobs:
+  validate-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch naming convention
+        run: |
+          # Extrai o nome da branch
+          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+
+          # Expressão regular para validar os padrões de nomenclatura
+          if [[ ! "$BRANCH_NAME" =~ ^(feat|fix)/(api|automation|bot|doc|cmod)/[a-zA-Z0-9_-]+$ ]] && [[ ! "$BRANCH_NAME" =~ ^(main|develop)$ ]]; then
+            echo "Erro: O nome da branch '$BRANCH_NAME' não segue o padrão esperado."
+            echo "Padrões permitidos:"
+            echo "1. Para melhorias/novas implementações: feat/context/description"
+            echo "2. Para correções/bugs: fix/x/y"
+            echo "3. Nomes padrões: main ou develop"
+            echo "Onde 'context' pode ser: api, automation, bot, doc, cmod"
+            echo "E 'description' é um valor livre, sem restrições."
+            exit 1
+          fi
